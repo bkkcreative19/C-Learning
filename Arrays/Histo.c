@@ -1,61 +1,57 @@
 #include <stdio.h>
 #include <stdlib.h>
+#include <string.h>
 
-void print_lines(int count) {
-    for (int i = 0; i < count; i++) {
-        printf("-");
-    }
-    puts("\n");
- }
+#define MAX_WORD_SIZE = 9
 
-FILE *read_file(char filename[], char *buffer) {
-    FILE* file = fopen(filename, "r");
-    return file;
+
+
+void print_histo(int num) {
+  for (int i = 0; i < num; i++) {
+    putchar('#');
+  }
 }
 
-
 int main() {
-    int c;
-    int count = 0;
-    int number_words[20];
-    
-    char line[256];
 
-    FILE *fptr = read_file("yay.txt", line);
-    // int i = 0;
-    // while ((c = fgetc(fptr)) != EOF)
-    //     printf("%c", c);
-    
-    
+  char c;
+  int options[10];
+  FILE *fptr = fopen("yay.txt", "r");
 
-    while ((c = fgetc(fptr)) != EOF) {
-        ++count;
-        // printf("%c\n", c);
-        if (c == ' ' || c == '\t' || c == '\n') {           
-            ++number_words[count-1];
-            // printf("%d\n", count - 1);
-            count = 0;
-        }
+  int count = 0;
+
+  for (int i = 0; i < 10; i++) {
+    options[i] = 0;
+  }
+
+  while ((c = fgetc(fptr)) != EOF) {
+    if(c == '\n' || c == '\t' || c == ' ' || c == EOF) {
+      ++options[count];
+      count = 0;
+      continue;
     }
 
-    for (int i = 0; i < sizeof(number_words); ++i) {
-        printf("%d\n", i);
-        // if (i < 10) {
-        //     printf("0%d| %d \n", i, number_words[i]);
-        // } else {
-        //     printf("%d| %d \n", i, number_words[i]);
-        // }
-    }
+    count++;
+    // printf("%d\n", count);
+    // printf("%c", ch);
+  }
 
-    // printf("%d", count);
-    // for (int i = 0; i < 20; ++i) {
-    //     if (i < 10) {
-    //         printf("0%d| %d \n", i, number_words[i]);
-    //     } else {
-    //         printf("%d| %d \n", i, number_words[i]);
-    //     }
-        
-    // //     print_lines(number_words[i]);
-    // }
-    
+
+  printf("Horizontal Histogram\n");
+
+  for (int i = 0; i < 20; i++) {
+    printf("_");
+  }
+
+  puts("\n");
+  
+  for (int i = 0; i < 10; i++) {
+    printf("   %d:    ", i);
+    print_histo(options[i]);
+    puts("\n");
+  }
+  
+
+  fclose(fptr);
+  return 0;
 }
