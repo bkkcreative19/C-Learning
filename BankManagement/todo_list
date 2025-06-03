@@ -1,0 +1,71 @@
+
+
+## 🧠 **Concepts Used**
+
+1. **Structures (`struct`)**
+
+   * To define and manage bank account data (e.g., account number, name, balance).
+
+2. **File Handling**
+
+   * To store, update, and retrieve account data persistently using binary files.
+
+3. **Functions**
+
+   * For modularizing the code into logical operations (e.g., create account, deposit).
+
+4. **Control Flow**
+
+   * Loops and conditionals to drive menu navigation and business logic.
+
+5. **Basic Error Checking**
+
+   * To handle invalid input or file read/write failures.
+
+6. **Searching and Updating Records**
+
+   * Using sequential file access to locate and modify specific accounts.
+
+7. **Simple User Interface (Console-based)**
+
+   * Text-based menu for user interactions.
+
+---
+
+## 💼 **What It’s Supposed to Do**
+
+The system simulates basic operations of a bank for managing user accounts:
+
+1. **Create a New Account**
+
+   * User inputs name, account number, and initial deposit. The system saves it to a file.
+
+2. **View All Accounts**
+
+   * Lists all account holders and their balances.
+
+3. **Search for an Account**
+
+   * Retrieves and displays information by account number.
+
+4. **Deposit Money**
+
+   * Adds funds to a selected account's balance.
+
+5. **Withdraw Money**
+
+   * Subtracts funds from the account if sufficient balance exists.
+
+6. **Delete an Account**
+
+   * Removes an account from the system.
+
+7. **Exit**
+
+   * Ends the session safely.
+
+---
+
+This project gives you hands-on experience with **file systems, data structures, and modular design** in C, making it a great intermediate-level exercise.
+
+Would you like ideas on how to expand or modernize this project later on (e.g., password protection, transaction history, GUI)?
